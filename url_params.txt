@@ -67,7 +67,7 @@
             0 : books
             1 : CDrom/DVDrom
             2 : cartes
-            3 : periodics
+            3 : periodicals
             4 : VHS/DVD
             5 : "Polycopiés/Annales"
             6 : Thesis
