@@ -5,4 +5,4 @@ require './search'
 
 s = BUP7::SearchQuery.new('foo').for(:all).between(1914, 2012).in(:all)
 
-p s.inspect
+p s.to_s
