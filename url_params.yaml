@@ -3,7 +3,7 @@
 :limits:
   :keywords: 3
 :values:
-  :params:
+  :keywords:
     :title: 4
     :author: 1003
     :subject: 21
@@ -72,6 +72,7 @@
   :document_types: choixType
 
   :langs: flang
+  :langs_inc: flangb
 
   :after: fpds
   :before: fpde
