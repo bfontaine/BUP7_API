@@ -1,46 +1,49 @@
 ---
+:url: 'http://catalogue-scd.univ-paris-diderot.fr/cgi-bin/gw_48_1_14_1/chameleon?'
+:limits:
+  :keywords: 3
 :values:
-#  :params:
-  :title: 4
-  :author: 1003
-  :subject: 21
-  :ISBN: 7
-  :ISSN: 8
-  :editor: 1018
-  :collection: 1020
-  :all_words: 1035
+  :params:
+    :title: 4
+    :author: 1003
+    :subject: 21
+    :ISBN: 7
+    :ISSN: 8
+    :editor: 1018
+    :collection: 1020
+    :all_words: 1035
 
-#  :libraries:
-  :all: 0
-  :lsh: 1
-  :sciences: 1
-  :health: 2
-  :central: 3
-  :bichat: 4
-  :english_studies: 5
-  :robert_debre: 6
-  :GHSS: 7
-  :odontology: 8
-  :physics: 9
-  :hematology: 10
-  :villemin: 11
+  :libraries:
+    :all: 0
+    :lsh: 1
+    :sciences: 1
+    :health: 2
+    :central: 3
+    :bichat: 4
+    :english_studies: 5
+    :robert_debre: 6
+    :GHSS: 7
+    :odontology: 8
+    :physics: 9
+    :hematology: 10
+    :villemin: 11
 
-#  :documents:
-  :all_docs: norestriction
-  :books: 0
-  :CDroms: 1
-  :DVDroms: 1
-  :maps: 2
-  :periodicals: 3
-  :VHS: 4
-  :DVD: 4
-  :handouts: 5
-  :annals: 5
-  :thesis: 6
+  :documents:
+    :all_docs: norestriction
+    :books: 0
+    :CDroms: 1
+    :DVDroms: 1
+    :maps: 2
+    :periodicals: 3
+    :VHS: 4
+    :DVD: 4
+    :handouts: 5
+    :annals: 5
+    :thesis: 6
 
-#  :langs:
-  :fr: fre
-  :en: eng
+  :langs:
+    :fr: fre
+    :en: eng
 
 :labels:
   :keywords_types:
