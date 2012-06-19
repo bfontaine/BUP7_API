@@ -3,12 +3,6 @@
 
 require './search'
 
-s = BUP7::Search.new
-s.params { |p|
-    p[:libraries] = :all
-    p[:keywords] = ['foo']
-    p[:keywords_types] = [:title]
-}
-puts s.encode.inspect
+s = BUP7::SearchQuery.new('foo').for(:all).between(1914, 2012).in(:all)
 
-puts s.send.inspect
+p s.inspect
