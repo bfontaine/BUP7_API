@@ -88,6 +88,94 @@ class BUP7
            _add_langs(langs)
         end
 
+        def to_uri_params()
+
+            # expand shortcuts
+            def expand_libs(l)
+                # all
+                l.concat((1..11).to_a) if l.include? 0
+                # sciences
+                l.concat([3,5,7,9]) if l.include? 1
+                # health
+                l.concat([4,6,8,10,11]) if l.include? 2
+            end
+
+            # strange parameters
+            def set_floc(l)
+                f = []
+                f.concat( (60000..60015).to_a ) if l.include? 3
+                f.concat((100000..100006).to_a ) if l.include? 4
+                f.concat( (80000..80003).to_a ) if l.include? 5
+                f.concat( (20000..20003).to_a ) if l.include? 6
+                f.concat( (70000..70006).to_a ) if l.include? 7
+                f.push(30000) if l.include? 8
+                f.concat( (90000..90002).to_a ) if l.include? 9
+                f.concat( (40000..40001).to_a ) if l.include? 10
+                f.concat( (50000..50008).to_a+[100000] ) if l.include? 11
+
+                f
+            end
+
+            uri_params = {}
+
+            # constants
+            CONFIG[:consts].each do |lb,v|
+                uri_params[lb] = v
+            end
+
+            # keywords
+            CONFIG[:labels][:keywords].each_with_index do |lb,i|
+                lb.each { |l| uri_params[l] = @keywords[i].to_s }
+            end
+
+            CONFIG[:labels][:keywords_types].each_with_index do |lb,i|
+                lb.each { |l| uri_params[l] = @keywords_types[i].to_s }
+            end
+
+            CONFIG[:labels][:operations].each_with_index do |lb,i|
+                lb.each { |l| uri_params[l] = @keywords_ops[i].to_s }
+            end
+
+            # years
+            uri_params[CONFIG[:labels][:after]] = @params[:after]
+            uri_params[CONFIG[:labels][:before]] = @params[:before]
+
+            libraries = [CONFIG[:values][:libraries][:all]]
+
+            if @params[:libraries]
+                libraries = []
+                @params[:libraries].map do |lib|
+                    libraries.push(CONFIG[:values][:libraries][lib])
+                end
+                libraries = libraries.uniq.delete_if { |e| e.nil? }
+            end
+
+            libraries = expand_libs(libraries)
+            uri_params[CONFIG[:labels][:libraries]] = libraries
+            uri_params[CONFIG[:labels][:floc]] = set_floc(libraries)
+
+            if @params[:langs]
+                uri_params[CONFIG[:labels][:langs_inc]] =
+                    1 if @flags.include? :include_langs
+                uri_params[CONFIG[:labels][:langs_inc]] = 
+                    0 if @flags.include? :exclude_langs
+            end
+
+            docs = [CONFIG[:values][:documents][:all_docs]]
+            if @params[:documents]
+                docs = []
+                @params[:documents].map do |doc|
+                    docs.push(CONFIG[:values][:documents][doc])
+                end
+                docs = docs.uniq.delete_if { |e| e.nil? }
+            end
+
+            uri_params
+        end
+
+        def to_s
+            CONFIG[:url] + URI.encode_www_form(self.to_uri_params)
+        end
 
         private
 
@@ -108,7 +196,7 @@ class BUP7
 
             p = {:all_words => p} if (p.is_a?(String))
 
-            CONFIG[:values][:params].each do |label,value|
+            CONFIG[:values][:keywords].each do |label,value|
                 next if p[label].nil?
                 raise SearchQuery::TooManyKeywords.new if @keywords.length == CONFIG[:limits][:keywords]
 
