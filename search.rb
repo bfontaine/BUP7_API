@@ -13,3 +13,7 @@ CONFIG = begin
 
 require_relative './query'
 
+# TODO
+#
+# add headers, like Referer, User-Agent, etc
+#
