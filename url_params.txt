@@ -1,0 +1,111 @@
+
+    URL: http://catalogue-scd.univ-paris-diderot.fr/cgi-bin/gw_48_1_14_1/chameleon?
+
+    params:
+
+        param_name: value (type)
+            or (if unknown): ? <observed values>
+
+        ---------------------------
+
+        uX: keyword type
+                4    : title
+                1003 : author
+                21   : subject
+                7    : ISBN
+                8    : ISSN
+                1018 : editor
+                1020 : collection
+                1035 : all words
+
+        vuX: keyword type (same as uX)
+
+        tX: keyword
+        vtX: keyword (same as tX)
+
+        opY: operation between keywords t(Y+1) and t(Y+2): AND/OR/NOT
+
+        vopZ = opZ
+
+        X : 1-5
+        Y : 1-3
+        Z : 1-2
+
+        --------------------------
+
+        choixbib: libraries (multiple choices)
+             0: Toutes (All) : select 1-11
+             1: LSH/Sciences : select 3,5,7,9
+             2: Santé        : select 4,6,8,10,11
+             3: Bibliothèque centrale
+             4: Xavier Bichat
+             5: Études anglophones
+             6: Robert-Debré
+             7: GHSS
+             8: Odontologie
+             9: Physique-Recherche
+            10: Hématologie
+            11: Villemin
+
+        floc: multiple numbers:
+
+            choixbib =  3 -> 60000-600015
+                        4 -> 10000-10006
+                        5 -> 80000-80003
+                        6 -> 20000-20003
+                        7 -> 70000-70006
+                        8 -> 30000
+                        9 -> 90000-90002
+                       10 -> 40000-40001
+                       11 -> 50000-50008,100000 (?)
+
+        ---------------------------
+
+        choixType: documents types (multiple choices)
+        
+            norestriction : all
+            0 : books
+            1 : CDrom/DVDrom
+            2 : cartes
+            3 : periodics
+            4 : VHS/DVD
+            5 : "Polycopiés/Annales"
+            6 : Thesis
+
+        ---------------------------
+
+        flang: langs (multiple choices)
+
+            e.g.:
+                fre : French (modern)
+                eng : English (modern)
+                …
+
+        flangb: 1 to include the given langs
+                0 to exclude the given langs
+
+        ---------------------------
+        
+        fpds: year after (default: empty)
+        fpde: year before (default: empty)
+
+        ---------------------------
+        misc
+        ----
+
+        beginsrch: 1
+        elementcount: 5
+        flocb: 1
+        fltset: submsn
+        function: INITREQ
+        inst: consortium
+        lng: fr
+        pos: 1
+        rootsearch: KEYWORD
+        search: KEYWORD
+        sessionid: <number>
+        skin: paris7
+        submittheform: <empty>
+        usersrch: 1
+
+        
