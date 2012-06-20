@@ -5,4 +5,5 @@ require './search'
 
 s = BUP7::SearchQuery.new('foo').for(:all).between(1914, 2012).in(:all)
 
-p s.to_s
+r = s.send
+p r.to_html
