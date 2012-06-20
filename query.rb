@@ -173,7 +173,7 @@ class BUP7
             uri_params
         end
 
-        def to_s
+        def to_url
             CONFIG[:url] + URI.encode_www_form(self.to_uri_params)
         end
 
