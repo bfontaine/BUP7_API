@@ -97,3 +97,13 @@
   submittheform:
   usersrch: 1
 
+:parsing:
+  :attrs:
+    :title: 'Titre :'
+    :author: 'Auteur :'
+    :editor: 'Editeur :'
+    :ISBN: 'ISBN :'
+    :notes: 'Notes :'
+    :subjects: 'Sujets :'
+    :cote: 'Cote :'
+
