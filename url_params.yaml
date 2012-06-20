@@ -33,7 +33,7 @@
     :villemin: 11
 
   :documents:
-    :all_docs: norestriction
+    :all: norestriction
     :books: 0
     :CDroms: 1
     :DVDroms: 1
