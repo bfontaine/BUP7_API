@@ -1,5 +1,9 @@
 ---
-:url: 'http://catalogue-scd.univ-paris-diderot.fr/cgi-bin/gw_48_1_14_1/chameleon?'
+:url: http://catalogue-scd.univ-paris-diderot.fr/cgi-bin/gw_48_1_14_1/chameleon?
+:headers:
+  Host: catalogue-scd.univ-paris-diderot.fr
+  Referer: http://catalogue-scd.univ-paris-diderot.fr/cgi-bin/gw_48_1_14_1/chameleon?sessionid=42&skin=paris7&lng=fr&inst=consortium&timedout=1
+  User-Agent: 'BUP7 Ruby API v0.1 +github.com/bfontaine/BUP7_API'
 :limits:
   :keywords: 3
 :values:
@@ -88,7 +92,7 @@
   pos: 1
   rootsearch: KEYWORD
   search: KEYWORD
-  sessionid: 0
+  sessionid: 42
   skin: paris7
   submittheform:
   usersrch: 1
